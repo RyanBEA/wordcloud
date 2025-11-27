@@ -1,0 +1,686 @@
+{
+  "session": "halifax",
+  "curated_date": "2025-11-27",
+  "examples": {
+    "tier": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "What I'm hearing from a lot of municipalities, the more rural we're getting, the more that this is going to be an issue when we adopt Tier 2, because it's the contractors that need to fully understand ECMs.",
+        "timestamp": "15:50"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Bridging the gap between modeling and performance-based approaches to compliance with Tiers 2 and Tiers 3, which are already slated with timelines, and what industry is prepared to understand as far as what that means for planning, implementation, and on-site construction.",
+        "timestamp": "17:11"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "In terms of costs and market implications, I think Tier 2 and 3 will be difficult from a practicality point of view, a contractor doing it. But cost-wise and being able to communicate it, Tier 4 is when it really gets challenging.",
+        "timestamp": "25:05"
+      }
+    ],
+    "training": [
+      {
+        "speaker": "Joe C",
+        "role": "client",
+        "quote": "What we aim to do is capacity building and training for the building sector, as well as organizing events and conducting research, all with the ultimate goal of pushing an equitable and just transition to net zero.",
+        "timestamp": "00:54"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "The way that we have trained builders and trained developers in the past is not something that's going to work for this next phase of building codes. Getting industry off the tools and into a classroom setting is very difficult.",
+        "timestamp": "27:58"
+      },
+      {
+        "speaker": "Ryan K",
+        "role": "SME",
+        "quote": "When you get to Tier 3, the prescriptive option is gone entirely. Then you're training the workforce to work with energy modelers at a marginally higher tier.",
+        "timestamp": "53:31"
+      }
+    ],
+    "building": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "As we're moving away from prescriptive routes for energy code compliance for our Part 9 buildings, there's all my tilt-up construction gone, all my warehouses gone, all my industrial complex gone. Now they're all being energy modeled.",
+        "timestamp": "66:09"
+      },
+      {
+        "speaker": "Joe C",
+        "role": "client",
+        "quote": "We're doing some research about workforce readiness in Nova Scotia's building sector and commercial heat retrofits as well.",
+        "timestamp": "01:44"
+      },
+      {
+        "speaker": "Matthew B",
+        "role": "building official",
+        "quote": "For the building official, when we're rolling up to a pre-drywall inspection, that'd be the main inspection stage where you can assess these insulation models. What path have they chosen?",
+        "timestamp": "46:57"
+      }
+    ],
+    "compliance": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "In part three, we're not seeing a lot of prescriptive compliance these days, mostly from IRBs. It's all going to be NECB compliant energy modeling.",
+        "timestamp": "12:37"
+      },
+      {
+        "speaker": "Ryan K",
+        "role": "SME",
+        "quote": "You have prescriptive, you have performance. Almost exclusively, people are using prescriptive for code compliance. There's a good chunk of builders that have done assessments over to performance compliance.",
+        "timestamp": "18:25"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Getting that education out and having them do a few blind tests on their compliance with their technology in this interim period.",
+        "timestamp": "27:19"
+      }
+    ],
+    "municipalities": [
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "We're doing a series of consultation sessions across the province and we want to hear from municipalities to get a better understanding of how ready they are for energy standards and how Building to Zero Exchange can help.",
+        "timestamp": "00:00"
+      },
+      {
+        "speaker": "Scott O",
+        "role": "policy and programs",
+        "quote": "We've had a lot of communities that have expressed interest in what the future of building codes look like, what municipalities can do, and hopefully that can provide some insight into their concerns.",
+        "timestamp": "06:15"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "Municipalities are all different in terms of what the expectations are, what the resources are, where folks might be in terms of housing, climate plans, and energy efficiency standards.",
+        "timestamp": "30:35"
+      }
+    ],
+    "energy": [
+      {
+        "speaker": "Gary M",
+        "role": "energy advisor",
+        "quote": "I manage energy advisors at Clean Foundation. I myself have been an energy advisor for 25 years.",
+        "timestamp": "07:23"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "Energy advisors are licensed by NRCan to complete home assessments and issue EnerGuide labels. Energy advisors typically work with single-family housing, but sometimes model small multi-unit buildings.",
+        "timestamp": "32:17"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "If we can inspire confidence that the resources are out there, that the capacity is available in industry to help streamline their process through the availability of energy advisors and the availability of models.",
+        "timestamp": "159:38"
+      }
+    ],
+    "contractors": [
+      {
+        "speaker": "Ryan K",
+        "role": "SME",
+        "quote": "Contractors, they just want numbers. They don't want to have multiple options for the most part. They just want to know how to do this prescriptively, give them the numbers, and this is the way to do it.",
+        "timestamp": "11:43"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "Program partners, their new home programs aren't really aligned with the future. So it's not necessarily enabling the contractor side to get prepared for the future.",
+        "timestamp": "14:44"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "It's the contractors that need to fully understand ECMs. And they're not looking for all the current solutions.",
+        "timestamp": "15:50"
+      }
+    ],
+    "builders": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "They're not passive as builders. They're looking for a solution that will work, that they can effectively and equitably price across the board for all of their work.",
+        "timestamp": "16:28"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "At least it's something tangible that you can hand to your builder and say, if you just do this much more insulation in this assembly, you get three points. If you give me a slightly more efficient HRV, I can give you two points.",
+        "timestamp": "26:49"
+      },
+      {
+        "speaker": "Matthew B",
+        "role": "building official",
+        "quote": "We have one builder that goes performance. Cresco.",
+        "timestamp": "18:46"
+      }
+    ],
+    "modeling": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "It's all going to be NECB compliant energy modeling, but it's ensuring that long form submissions are being provided covering all of the changes, all deviations or circumventions of baseline requirements of the reference model.",
+        "timestamp": "12:43"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "Energy modelers are typically engineers whose focus is energy modeling for part three buildings and some part nine.",
+        "timestamp": "32:34"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "In terms of actually doing the models for part-time compliance, it can be done with very much fewer people than I think we all think when we hear this capacity issue. So it's really not a capacity issue.",
+        "timestamp": "68:57"
+      }
+    ],
+    "readiness": [
+      {
+        "speaker": "Joe C",
+        "role": "client",
+        "quote": "We're doing some research about workforce readiness in Nova Scotia's building sector and commercial heat retrofits as well.",
+        "timestamp": "01:44"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Working with our provincial and national bodies in education resources and readiness for being able to hand that training off to industry.",
+        "timestamp": "07:05"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "We're looking at operational readiness. So that would be policy, commitment, as well as resources, engagement.",
+        "timestamp": "29:04"
+      }
+    ],
+    "prescriptive": [
+      {
+        "speaker": "Ryan K",
+        "role": "SME",
+        "quote": "Almost exclusively, people are using prescriptive for code compliance.",
+        "timestamp": "18:28"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "When 2027 hits, and we no longer have access to even prescriptive routes for energy code compliance for our Part 9 buildings.",
+        "timestamp": "66:09"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "If you were forcing prescriptive, you've got a building where the insulation is in place, your vapor barrier is in place, it's drywalled. You're not making up the difference.",
+        "timestamp": "107:55"
+      }
+    ],
+    "insulation": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "If you just do this much more insulation in this assembly, you get three points.",
+        "timestamp": "26:49"
+      },
+      {
+        "speaker": "Matthew B",
+        "role": "building official",
+        "quote": "When we're rolling up to a pre-drywall inspection, that'd be the main inspection stage where you can assess some of these insulation models.",
+        "timestamp": "46:57"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "You're stripping all of the insulation out because it's undersized and replacing it. Or you're stripping all of the cladding, flashing, all your windows and doors out so that you can accommodate insulation on the exterior of the building.",
+        "timestamp": "108:17"
+      }
+    ],
+    "performance": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Bridging the gap between modeling and performance-based approaches to compliance with Tiers 2 and Tiers 3.",
+        "timestamp": "17:11"
+      },
+      {
+        "speaker": "Matthew B",
+        "role": "building official",
+        "quote": "We would steer them to one of the service organizations to have to go the performance approach.",
+        "timestamp": "78:38"
+      }
+    ],
+    "code": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "The code changes themselves are fairly black and white. There is a bit of gray area around interpretation around mechanical systems and the NECB, specifically the baselines.",
+        "timestamp": "26:01"
+      },
+      {
+        "speaker": "James S",
+        "role": "building official",
+        "quote": "The code gets more complex. I've got 15 minutes to look over this sort of stuff. That's not enough.",
+        "timestamp": "49:36"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "When 2027 hits, and we no longer have access to even prescriptive routes for energy code compliance for our Part 9 buildings, there's all my tilt-up construction gone, all my warehouses gone.",
+        "timestamp": "66:09"
+      }
+    ],
+    "codes": [
+      {
+        "speaker": "Scott O",
+        "role": "policy and programs",
+        "quote": "We've had a lot of communities that have expressed interest in what the future of building codes look like, what municipalities can do.",
+        "timestamp": "06:15"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Enforcing the building codes and other local construction codes, but also working with our provincial and national bodies in education resources and readiness.",
+        "timestamp": "07:05"
+      }
+    ],
+    "industry": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "That in itself is going to be a challenge that industry faces, bridging the gap between modeling and performance-based approaches to compliance.",
+        "timestamp": "17:04"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "I've worked with industry for quite some time now. And when trying to upskill industry, it's not easy. And it's not easy to get folks at the table.",
+        "timestamp": "61:37"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Communicating that to industry and having industry strategize how they're going to rebuild houses, that's a different story when it comes to the actual modeling requirements.",
+        "timestamp": "26:17"
+      }
+    ],
+    "capacity": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "We have a handful of capable individuals covering every building in HRM, and so that's a lot of scope, that's a lot of capacity to continue to address.",
+        "timestamp": "65:35"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "In terms of actually doing the models for part-time compliance, it can be done with very much fewer people than I think we all think when we hear this capacity issue.",
+        "timestamp": "68:57"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "We will need to come up with some sort of different way in order to get everyone up to speed once we kind of get to those higher tiers without impacting workforce capacity.",
+        "timestamp": "28:22"
+      }
+    ],
+    "resources": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Working with our provincial and national bodies in education resources and readiness for being able to hand that training off to industry.",
+        "timestamp": "07:05"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "If we can inspire confidence that the resources are out there, that the capacity is available in industry to help streamline their process.",
+        "timestamp": "159:38"
+      }
+    ],
+    "changes": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Ensuring that long form submissions are being provided covering all of the changes, all deviations or circumventions of baseline requirements of the reference model.",
+        "timestamp": "12:48"
+      },
+      {
+        "speaker": "Scott O",
+        "role": "policy and programs",
+        "quote": "We've had a lot of communities that have expressed interest in what the future of building codes look like, what municipalities can do, and hopefully that can provide some insight into their concerns.",
+        "timestamp": "06:15"
+      }
+    ],
+    "work": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "They're looking for a solution that will work, that they can effectively and equitably price across the board for all of their work. With longevity.",
+        "timestamp": "16:28"
+      },
+      {
+        "speaker": "Scott O",
+        "role": "policy and programs",
+        "quote": "There's more work to be done there. But it's been nice to see municipalities taking on that eagerness, wanting to do more, wanting the province to adopt higher tiers.",
+        "timestamp": "50:51"
+      }
+    ],
+    "program": [
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "Efficiency Nova Scotia right now has the Energy Forward New Homes program, and it doesn't speak any of the code language. It doesn't talk about tiers.",
+        "timestamp": "57:01"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "Program partners, their new home programs aren't really aligned with the future necessarily. So they speak to something completely different.",
+        "timestamp": "14:23"
+      }
+    ],
+    "efficiency": [
+      {
+        "speaker": "James S",
+        "role": "building official",
+        "quote": "It's just going to be a matter of what's the trade-off, public safety versus energy efficiency versus barrier-free and availability.",
+        "timestamp": "49:38"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "You might just have to look at what you're already doing and make it a little bit tighter and more efficient.",
+        "timestamp": "27:15"
+      }
+    ],
+    "help": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "If we can inspire confidence that the resources are out there, that the capacity is available in industry to help streamline their process through the availability of energy advisors.",
+        "timestamp": "159:38"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "We would love to work with builders and help them through these challenges, but we've been put in scenarios where our relationships with builders are not that necessary.",
+        "timestamp": "121:41"
+      }
+    ],
+    "inspection": [
+      {
+        "speaker": "Matthew B",
+        "role": "building official",
+        "quote": "For the building official, when we're rolling up to a pre-drywall inspection, that'd be the main inspection stage where you can assess some of these insulation models.",
+        "timestamp": "38:31"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Those are gonna be really time-consuming inspections for building officials. So how much extra time do you think the inspections would be?",
+        "timestamp": "39:08"
+      }
+    ],
+    "zero": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "They're finding the concept of things like having buildings outside of passive homes or net zero rate homes to be this foreign thing, like you were speaking Greek to them.",
+        "timestamp": "17:42"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "It seems complicated, and we have zero participation from some builders who just don't engage with the programs.",
+        "timestamp": "118:49"
+      }
+    ],
+    "housing": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "But as far as what that aligns with, as far as overall numeracy of housing deliverables or climate change goals, it's not really in any sort of real alignment.",
+        "timestamp": "53:05"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "How do you balance energy efficiency with housing affordability? That's one of the challenges we're trying to address.",
+        "timestamp": "129:40"
+      }
+    ],
+    "home": [
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "Program partners, their new home programs aren't really aligned with the future necessarily. So it's not enabling the contractor side to get prepared.",
+        "timestamp": "15:02"
+      },
+      {
+        "speaker": "Jordan M",
+        "role": "energy advisor",
+        "quote": "On our end, the new homes program right now in Nova Scotia makes it seem like this is a very daunting, challenging thing, that it's a science fair project, and it's not.",
+        "timestamp": "110:46"
+      }
+    ],
+    "process": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "In the process of doing that, you have an energy model, and you can see the prescriptive elements that will be involved in achieving that tier.",
+        "timestamp": "50:06"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "If we can inspire confidence that the resources are out there to help streamline their process through the availability of energy advisors and models.",
+        "timestamp": "150:30"
+      }
+    ],
+    "support": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "As the codes are changing, there's going to be some growing pains that often requires more support in different capacities, which might need more funding.",
+        "timestamp": "107:04"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "First one, support for small builders. Anything new that you want to highlight in terms of support for small builders?",
+        "timestamp": "128:50"
+      }
+    ],
+    "areas": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Then at that point, you run into issues with addressing more rural areas of the province, and that is a capacity building issue.",
+        "timestamp": "61:39"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "We're really trying to identify what are some of those challenging areas that communities may need more help with.",
+        "timestamp": "137:41"
+      }
+    ],
+    "working": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Enforcing the building codes and other local construction codes, but also working with our provincial and national bodies in education resources and readiness.",
+        "timestamp": "07:26"
+      },
+      {
+        "speaker": "Scott O",
+        "role": "policy and programs",
+        "quote": "It's been nice to see municipalities taking on that eagerness, wanting to do more, wanting the province to adopt higher tiers. There's more work to be done there.",
+        "timestamp": "41:36"
+      }
+    ],
+    "tiers": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Bridging the gap between modeling and performance-based approaches to compliance with Tiers 2 and Tiers 3, which are already slated with timelines.",
+        "timestamp": "18:11"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "We will need to come up with some different way to get everyone up to speed once we get to those higher tiers without impacting workforce capacity.",
+        "timestamp": "29:52"
+      }
+    ],
+    "review": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "A standardized document would be good for plan review. That's what a process of plan review would look like, a PE audit plan review report coming to you.",
+        "timestamp": "93:23"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "That doesn't give the reviewer a lot of confidence or a lot of tools to be able to adequately assess compliance.",
+        "timestamp": "106:03"
+      }
+    ],
+    "level": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "At the industry level itself, the public just wants to know that if it's going to be costing more, that it's an upfront cost that is reducing overall operating costs.",
+        "timestamp": "67:42"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "That is the level of choice that most contractors want. Give them the numbers and this is the way to do it.",
+        "timestamp": "76:00"
+      }
+    ],
+    "small": [
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "Support for small builders. Anything new that you want to highlight in terms of support for small builders?",
+        "timestamp": "128:50"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Energy advisors typically work with single-family housing, but sometimes model small multi-unit buildings.",
+        "timestamp": "34:13"
+      }
+    ],
+    "builder": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "At least it's something tangible that you can hand to your builder and say, if you just do this much more insulation in this assembly, you get three points.",
+        "timestamp": "26:49"
+      },
+      {
+        "speaker": "Matthew B",
+        "role": "building official",
+        "quote": "We have one builder that goes performance. They've embraced the performance path fully.",
+        "timestamp": "18:46"
+      }
+    ],
+    "change": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "The code changes themselves are fairly black and white. There is a bit of gray area around interpretation around mechanical systems.",
+        "timestamp": "26:01"
+      },
+      {
+        "speaker": "Scott O",
+        "role": "policy and programs",
+        "quote": "Support of locally sourced materials, but they wouldn't replace or mitigate or change the requirements for legislatively mandated inspections.",
+        "timestamp": "126:46"
+      }
+    ],
+    "buildings": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "As we're moving away from prescriptive routes for energy code compliance for our Part 9 buildings, there's all my tilt-up construction gone, all my warehouses gone.",
+        "timestamp": "66:09"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "They're finding the concept of things like having buildings outside of passive homes or net zero rate homes to be this foreign thing.",
+        "timestamp": "17:42"
+      }
+    ],
+    "information": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "That could be a reasonably easy way for us to disseminate some information from a provincial level organization and ensure that all of our residents have been exposed to it.",
+        "timestamp": "65:07"
+      },
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Overall delivery of information about actual energy consumption, provisions for thermal blocks, where they were located, how different areas of the building were considered.",
+        "timestamp": "105:13"
+      }
+    ],
+    "years": [
+      {
+        "speaker": "Gary M",
+        "role": "energy advisor",
+        "quote": "I manage energy advisors at Clean Foundation. I myself have been an energy advisor for 25 years.",
+        "timestamp": "07:23"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "I've worked with industry for quite some time now, many years. And when trying to upskill industry, it's not easy.",
+        "timestamp": "61:37"
+      }
+    ],
+    "year": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "This past year has been particularly challenging with the volume of construction and the code changes happening simultaneously.",
+        "timestamp": "65:35"
+      }
+    ],
+    "house": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "What are the features that I want this house to have that would not be in stock housing inventory? That becomes a lot easier conversation to have.",
+        "timestamp": "101:30"
+      }
+    ],
+    "build": [
+      {
+        "speaker": "Greg H",
+        "role": "building official",
+        "quote": "Communicating that to industry and having industry strategize how they're going to build houses, that's a different story when it comes to the actual modeling requirements.",
+        "timestamp": "26:17"
+      },
+      {
+        "speaker": "Linda M",
+        "role": "policy and programs",
+        "quote": "All the affordable housing that the province wants to build, of course, they've got goals to meet.",
+        "timestamp": "86:51"
+      }
+    ]
+  }
+}

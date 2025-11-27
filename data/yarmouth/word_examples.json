@@ -1,0 +1,558 @@
+{
+  "session": "yarmouth",
+  "curated_date": "2025-11-27",
+  "examples": {
+    "tier": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "The reasoning behind the tiers and how we apply them and the reasoning behind improved insulation or different material use in the building industry, then it's easier to get the person in front of me to accept the extra cost upfront.",
+        "timestamp": "12:00"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "Tier two is really a shift from prescriptive to performance-based compliance. And municipalities and builders will need to engage more deeply with modeling tools and energy rating systems as a result.",
+        "timestamp": "27:49"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "There's a lot of improvement required by the NECB compared to the National Building Code for similar tiers. You're looking at percent heat loss reduction in tier three, April 1st, 2027.",
+        "timestamp": "30:57"
+      }
+    ],
+    "training": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "Training is a big focus of ours, as well as putting together events that get the right people in the right room together, in addition to doing a bit of research about the state of workforce, codes, things to that nature.",
+        "timestamp": "02:00"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "We're also faced with newer members and newer contractors that are more recently out of training. So they know the terminology and they know that they need to go get a certain higher standard.",
+        "timestamp": "14:48"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "Sometimes they'll open their own business, but it's based on what they've done in the past rather than any training they may have done. A lot more general laborers rather than carpenters.",
+        "timestamp": "15:37"
+      }
+    ],
+    "rural": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I find in rural Nova Scotia more so, when you have builders coming in that are larger, they do a lot more with the calculations. Whereas the smaller rural areas are more likely to find something that works and they build the same way all the time.",
+        "timestamp": "13:22"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Rural area, we have a variety of people who may or may not have gone through formal training as a trade or as an experience as a general contractor.",
+        "timestamp": "19:28"
+      }
+    ],
+    "contractors": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "I would say it's 30% contractor, 70% homeowner, weekend warrior kind of thing.",
+        "timestamp": "23:46"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "When I see a big difference between the weekend warrior and the contractor, the established big companies, we have a couple of big contractor companies that don't have that problem because they have the resources in the house to set everything up.",
+        "timestamp": "19:39"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "We're requiring a blower door test at the end of their inspection process and contractors are saying, these people need to move in, we were putting them up in a hotel, and the blower door people are saying six weeks wait.",
+        "timestamp": "71:49"
+      }
+    ],
+    "prescriptive": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "What's working well is the old school prescriptive requirements. People have been trained over time by passing and failing their inspections.",
+        "timestamp": "14:17"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "For prescriptive-based, if we could show them packages that they can follow I think that would be ideal, knowing that they're making changes now but it's changes that they can ride out for two tiers down the road.",
+        "timestamp": "22:26"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "I'm wondering how often you would see energy modeling in plans, or would it just be the prescriptive path rather than the performance? Prescriptive path, definitely.",
+        "timestamp": "75:07"
+      }
+    ],
+    "compliance": [
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "What are the key challenges you face right now in terms of enforcing codes and compliance?",
+        "timestamp": "18:23"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "One case of non-compliance went to court and the lawyer looked at the applicant and said, you either do what they tell you or I'm going to charge you twice as much. So they comply.",
+        "timestamp": "115:31"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "Given what we have here, how well do you understand the energy efficient standards and compliance requirements under tier one?",
+        "timestamp": "26:39"
+      }
+    ],
+    "builders": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "A third of them are done by the same few builders and they build way more than what they're required to do. They take pride in their work, so if they went out and got the education they're probably not going to end up doing it any better than what they are now.",
+        "timestamp": "56:33"
+      },
+      {
+        "speaker": "Alex O",
+        "role": "Building official",
+        "quote": "A significant number of builders in this area wouldn't know where to get the information, or even why they need to get it, until they've been scolded and called over that they didn't do something to a certain extent.",
+        "timestamp": "57:37"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "Builders and designers, we're defining those as stakeholders that are involved in designing and developing individual buildings or entire developments.",
+        "timestamp": "36:58"
+      }
+    ],
+    "insulation": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "The reasoning behind improved insulation or different material use in the building industry makes it easier to get the person in front of me to accept the extra cost upfront.",
+        "timestamp": "12:00"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "People two by six cavity get R24 in there, and a lot of people are energy conscious minded in new construction, so they're adding the extra thermal break exterior insulation.",
+        "timestamp": "51:08"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "If you've got birch bark in your walls and the room adjoining is now to 2020 or 2015 code, then you're creating a huge difference in energy consumption or insulation.",
+        "timestamp": "45:22"
+      }
+    ],
+    "blower": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "We're requiring a blower door test at the end of their inspection process. Blower door purchases are gonna be like the new Bitcoin when it comes to being able to assist.",
+        "timestamp": "71:49"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "The blower door test, it's like the cart before the horse. You can't do a blower door test until your drywall is on, but if you put your drywall on, you can't change the envelope that's behind it anymore.",
+        "timestamp": "72:18"
+      }
+    ],
+    "education": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "Education on all aspects of it.",
+        "timestamp": "12:31"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "Until we can get our ducks in a row and offer that customer service and education, I don't think we're going to have buy-in from the contracting community.",
+        "timestamp": "22:09"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "If they went out and got the education they're probably not going to end up doing it any better than what they are now.",
+        "timestamp": "56:33"
+      }
+    ],
+    "municipalities": [
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "We want to know from the municipalities so that Building to Zero Exchange can help identify training and resources which might help municipalities be prepared to implement those changes.",
+        "timestamp": "01:06"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "We want your honest feedback so that Building to Zero Exchange can look at what kind of training and resources might help municipalities.",
+        "timestamp": "34:46"
+      }
+    ],
+    "building": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "The building officials training on 9.36 code that we did last year.",
+        "timestamp": "03:52"
+      },
+      {
+        "speaker": "Allison M",
+        "role": "facilitator",
+        "quote": "What's working well in your current approach to building code enforcement and energy efficiency? What are some strengths?",
+        "timestamp": "11:34"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Somebody reached out to me from NCC to present the why of a building official and the permitting process to a class of advanced carpentry.",
+        "timestamp": "78:47"
+      }
+    ],
+    "homeowner": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "I would say it's 30% contractor, 70% homeowner, weekend warrior kind of thing.",
+        "timestamp": "23:46"
+      }
+    ],
+    "code": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "My training with NSBOA showed me that the rules are black and white, with some interpretation, and where we're more rural area, we have a variety of people who may or may not have gone through formal training.",
+        "timestamp": "19:07"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "If you've got birch bark in your walls and the room adjoining that section is now 936 or 2020 or 2015 code, then you're creating a huge difference in energy consumption.",
+        "timestamp": "45:22"
+      }
+    ],
+    "codes": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I think we haven't looked into it enough, but yet we know it's coming. I'm keeping it in the back of our mind. And when we see something that relates to it, we take note of it.",
+        "timestamp": "50:10"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "We all have the overall 936 training, but we've done very little to really dig in and look at tier two.",
+        "timestamp": "50:28"
+      }
+    ],
+    "industry": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "The reasoning behind improved insulation or different material use in the building industry makes it easier to get the person in front of me to accept the extra cost upfront.",
+        "timestamp": "12:00"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "An older workforce that's been shoe worn into this is how we do things. Now we're also faced with newer members and newer contractors that are more recently out of training.",
+        "timestamp": "14:34"
+      }
+    ],
+    "capacity": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I had one inspector that was just hired a year ago trying to get him trained so that someday I can retire.",
+        "timestamp": "06:54"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "We don't get the exposure that other centers may have. If your group could provide regular exposure to how to approach the NECB, it would be more valuable, we would retain a lot more.",
+        "timestamp": "41:03"
+      }
+    ],
+    "resources": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "The established big companies don't have that problem because they have the resources in the house to set everything up. So when they present us something, it's pretty well ready to go.",
+        "timestamp": "19:39"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I've been giving out the NRC's website to go on and download the building code, especially the illustrated guides that are out there to help.",
+        "timestamp": "18:33"
+      }
+    ],
+    "changes": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "They're making changes now but it's changes that they can ride out for two tiers down the road.",
+        "timestamp": "22:36"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "There's a lot of improvement required by the NECB compared to the National Building Code for similar tiers.",
+        "timestamp": "30:54"
+      }
+    ],
+    "work": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "In most cases, when somebody comes in and says I want to do this, and you sat down and say let's figure out how you can get to that goal, they will work with you a lot more.",
+        "timestamp": "17:02"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Council has made it very clear to the municipality that they want a conciliatory approach. So we'll start with a yes, and this is what you need to do to get there.",
+        "timestamp": "16:21"
+      }
+    ],
+    "efficiency": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "People are energy conscious minded in new construction, so they're adding the extra thermal break exterior insulation.",
+        "timestamp": "51:08"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "They're looking at future retirement and making everything as well as they can. So those people, no issues whatsoever.",
+        "timestamp": "52:46"
+      }
+    ],
+    "help": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I've been giving out the NRC's website to go on and download the building code, especially the illustrated guides that are out there to help the new builders.",
+        "timestamp": "18:33"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I find other programs to help with their design and whatnot so they can get some money back.",
+        "timestamp": "62:12"
+      }
+    ],
+    "information": [
+      {
+        "speaker": "Alex O",
+        "role": "Building official",
+        "quote": "A significant number of builders in this area wouldn't know where to get the information, or even why they need to get it, until they've been scolded and called over.",
+        "timestamp": "57:37"
+      }
+    ],
+    "buildings": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "The higher standards for the part three buildings, because the buildings are designed anyway, so it's not going to be as much of a leap to get there.",
+        "timestamp": "32:35"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Our focus is a lot more on renovations and smaller part nine buildings, it's not something that's top of mind.",
+        "timestamp": "50:51"
+      }
+    ],
+    "years": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I've been doing this for 25 years.",
+        "timestamp": "06:41"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "One thing that I see a lot over the years is people that in a small community, you start talking energy efficiency, all they're thinking is they wouldn't have bought an energy efficient washing machine.",
+        "timestamp": "65:33"
+      }
+    ],
+    "working": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "Yeah, we're working with them, they're fine with it after that.",
+        "timestamp": "18:14"
+      }
+    ],
+    "areas": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "Our understanding is that most of the areas outside of HRM are going to be primarily part nine.",
+        "timestamp": "30:33"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "Whereas the smaller rural areas are more likely to find something that works and they build the same way all the time.",
+        "timestamp": "13:30"
+      }
+    ],
+    "process": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "We're requiring a blower door test at the end of their inspection process and contractors are saying, these people need to move in.",
+        "timestamp": "71:49"
+      }
+    ],
+    "home": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Now your comfort in the home can't really be easily maintained by the systems that are commercially available, locally commercially available.",
+        "timestamp": "45:40"
+      }
+    ],
+    "housing": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "Energy advisors typically work with single-family housing, but sometimes model small multi-unit buildings.",
+        "timestamp": "37:20"
+      }
+    ],
+    "build": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "A third of them are done by the same few builders and they build way more than what they're required to do. They take pride in their work.",
+        "timestamp": "56:33"
+      },
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "Whereas the smaller rural areas are more likely to find something that works and they build the same way all the time.",
+        "timestamp": "13:30"
+      }
+    ],
+    "inspection": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "What's working well is the old school prescriptive requirements. People have been trained over time by passing and failing their inspections.",
+        "timestamp": "14:17"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "We're requiring a blower door test at the end of their inspection process and contractors are saying, these people need to move in.",
+        "timestamp": "71:49"
+      }
+    ],
+    "zero": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Even if we look at tier two under national building code, you have zero to five percent heat loss reduction or improvement.",
+        "timestamp": "31:36"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "We don't know what Building Zero is going to be able to do, like what their funding is going to be.",
+        "timestamp": "43:50"
+      }
+    ],
+    "support": [
+      {
+        "speaker": "Alex O",
+        "role": "Building official",
+        "quote": "They're trying to make a living, support their families.",
+        "timestamp": "57:19"
+      }
+    ],
+    "small": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "So they're ahead of the game, but that's a very small pocket.",
+        "timestamp": "59:44"
+      },
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "Our focus is a lot more on renovations and smaller part nine buildings, it's not something that's top of mind.",
+        "timestamp": "50:51"
+      }
+    ],
+    "level": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "You have to adapt to their level of acceptance and try to improve what they're doing or congratulate them as they meet the standard.",
+        "timestamp": "15:08"
+      }
+    ],
+    "year": [
+      {
+        "speaker": "Andrew G",
+        "role": "Building Official",
+        "quote": "I had one inspector that was just hired a year ago trying to get him trained so that someday I can retire.",
+        "timestamp": "06:57"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "The building officials training on 9.36 code that we did last year.",
+        "timestamp": "03:52"
+      }
+    ],
+    "house": [
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "I'm going with a beefier package right now but two tiers down the road I'm gonna have built this house for three or four years now and I'm gonna be very good at it.",
+        "timestamp": "22:36"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "If we go into a basement like a house, that same house from 1910 and they're creating a ziplock bag in their basement.",
+        "timestamp": "49:20"
+      }
+    ],
+    "tiers": [
+      {
+        "speaker": "Francois L",
+        "role": "Building official",
+        "quote": "The reasoning behind the tiers and how we apply them and the reasoning behind improved insulation or different material use in the building industry.",
+        "timestamp": "12:00"
+      },
+      {
+        "speaker": "UNKNOWN",
+        "role": "NA",
+        "quote": "They're making changes now but it's changes that they can ride out for two tiers down the road.",
+        "timestamp": "22:36"
+      }
+    ]
+  }
+}

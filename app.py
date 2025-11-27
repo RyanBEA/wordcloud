@@ -10,18 +10,82 @@ import dash_bootstrap_components as dbc
 
 from config import DEBUG, HOST, PORT
 from session_loader import SessionManager
-from wordcloud_generator import generate_wordcloud_figure, get_wordcloud_dimensions
+from wordcloud_generator import generate_wordcloud_svg, get_wordcloud_dimensions
 
 # Initialize the session manager
 session_manager = SessionManager()
 
-# Initialize Dash app with Bootstrap styling
+# Brand colors
+BRAND_PURPLE = "#4F3D63"
+
+# Google Fonts - Open Sans with ExtraBold (800) weight
+GOOGLE_FONTS = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap"
+
+# Initialize Dash app with Bootstrap styling and custom fonts
 app = dash.Dash(
     __name__,
-    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    external_stylesheets=[dbc.themes.BOOTSTRAP, GOOGLE_FONTS],
     title="Consultation Word Cloud",
     suppress_callback_exceptions=True,
 )
+
+# Custom CSS for Open Sans typography
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            /* Base font - Open Sans */
+            body {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+            }
+
+            /* Headings - Open Sans ExtraBold in brand purple */
+            h1, h2, h3, h4, h5, h6,
+            .h1, .h2, .h3, .h4, .h5, .h6 {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 800;
+                color: ''' + BRAND_PURPLE + ''';
+            }
+
+            /* Card headers */
+            .card-header {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 800;
+                color: ''' + BRAND_PURPLE + ''';
+            }
+
+            /* Strong/bold text - semibold */
+            strong, b {
+                font-weight: 600;
+            }
+
+            /* Buttons */
+            .btn-primary {
+                background-color: ''' + BRAND_PURPLE + ''';
+                border-color: ''' + BRAND_PURPLE + ''';
+            }
+            .btn-primary:hover {
+                background-color: #3d2f4d;
+                border-color: #3d2f4d;
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
 
 # Expose server for gunicorn (Railway deployment)
 server = app.server
@@ -79,22 +143,31 @@ def create_stats_panel():
         dbc.CardHeader("Word Details"),
         dbc.CardBody([
             html.Div(id="word-stats-content", children=[
-                html.P("Click on a word in the cloud to see details.",
+                html.P("Click a word or type below to see details.",
                        className="text-muted")
             ])
         ])
     ])
 
 
+# Get dimensions for sizing
+wc_width, wc_height = get_wordcloud_dimensions()
+
 # App layout
 app.layout = dbc.Container([
+    # Store for clicked word
+    dcc.Store(id="clicked-word-store", data=""),
+
+    # Interval to poll for clicked words from iframe
+    dcc.Interval(id="click-poll-interval", interval=200, n_intervals=0),
+
     # Header
     dbc.Row([
         dbc.Col([
             html.H1("Consultation Session Word Cloud", className="text-center my-4"),
             html.P(
                 "Interactive visualization of word frequencies from consultation transcripts. "
-                "Use filters to explore by role, region, and more. Click any word for details.",
+                "Use filters to explore by role, region, and more. Click words to see details.",
                 className="text-center text-muted mb-4"
             )
         ])
@@ -123,20 +196,19 @@ app.layout = dbc.Container([
                         id="loading-wordcloud",
                         type="circle",
                         children=[
-                            dcc.Graph(
-                                id="wordcloud-graph",
-                                config={
-                                    'displayModeBar': False,
-                                    'staticPlot': False,
-                                },
+                            # Container for SVG word cloud - properly sized
+                            html.Div(
+                                id="wordcloud-container",
                                 style={
                                     "width": "100%",
-                                    "height": f"{get_wordcloud_dimensions()[1]}px",
+                                    "aspectRatio": f"{wc_width}/{wc_height}",
+                                    "maxWidth": f"{wc_width}px",
+                                    "margin": "0 auto",
                                 }
                             )
                         ]
                     )
-                ])
+                ], style={"padding": "10px"})
             ]),
             # Word input for manual lookup
             dbc.InputGroup([
@@ -162,33 +234,41 @@ app.layout = dbc.Container([
         ], md=3),
     ]),
 
-    # Hidden store for selected word from graph click
-    dcc.Store(id="clicked-word-store"),
-
 ], fluid=True)
 
 
-def get_active_filters(session, *filter_values):
+# Clientside callback to listen for postMessage from iframe
+app.clientside_callback(
     """
-    Extract active filters from callback inputs.
+    function(n_intervals) {
+        // Set up message listener once
+        if (!window._wordcloudMessageListener) {
+            window._wordcloudMessageListener = function(event) {
+                if (event.data && event.data.type === 'wordcloud-click') {
+                    // Store the word for polling
+                    window._clickedWord = event.data.word;
+                }
+            };
+            window.addEventListener('message', window._wordcloudMessageListener);
+        }
 
-    Returns dict of {column: [selected_values]}
-    """
-    filter_options = session_manager.get_merged_filter_options()
-    columns = list(filter_options.keys())
-
-    filters = {}
-    for i, col in enumerate(columns):
-        if col in ["description"]:
-            continue
-        if i < len(filter_values) and filter_values[i]:
-            filters[col] = filter_values[i]
-
-    return filters
+        // Check if there's a clicked word to process
+        if (window._clickedWord) {
+            var word = window._clickedWord;
+            window._clickedWord = null;
+            return word;
+        }
+        return window.dash_clientside.no_update;
+    }
+    """,
+    Output("clicked-word-store", "data"),
+    Input("click-poll-interval", "n_intervals"),
+    prevent_initial_call=True
+)
 
 
 @app.callback(
-    Output("wordcloud-graph", "figure"),
+    Output("wordcloud-container", "children"),
     Output("summary-stats", "children"),
     Input("session-dropdown", "value"),
     Input("filter-role", "value"),
@@ -218,8 +298,21 @@ def update_wordcloud(session_value, role_filter, zone_filter, region_filter):
         total_words = sum(frequencies.values()) if frequencies else 0
         unique_words = len(frequencies)
 
-    # Generate interactive word cloud figure
-    fig = generate_wordcloud_figure(frequencies)
+    # Generate SVG word cloud
+    svg_content = generate_wordcloud_svg(frequencies)
+
+    # Embed SVG in an iframe with no scrollbars
+    wordcloud_element = html.Iframe(
+        srcDoc=svg_content,
+        style={
+            "width": "100%",
+            "height": "100%",
+            "border": "none",
+            "display": "block",
+            "overflow": "hidden",
+        },
+        id="wordcloud-iframe"
+    )
 
     # Generate summary stats
     summary = [
@@ -233,12 +326,12 @@ def update_wordcloud(session_value, role_filter, zone_filter, region_filter):
         ])
         summary.append(html.P([html.Strong("Active filters: "), active_filters]))
 
-    return fig, summary
+    return wordcloud_element, summary
 
 
 @app.callback(
     Output("word-stats-content", "children"),
-    Input("wordcloud-graph", "clickData"),
+    Input("clicked-word-store", "data"),
     Input("word-lookup-btn", "n_clicks"),
     State("word-lookup-input", "value"),
     State("session-dropdown", "value"),
@@ -247,31 +340,21 @@ def update_wordcloud(session_value, role_filter, zone_filter, region_filter):
     State("filter-region", "value"),
     prevent_initial_call=True,
 )
-def update_word_details(click_data, lookup_clicks, lookup_word, session_value, role_filter, zone_filter, region_filter):
-    """Update word details from either graph click or manual lookup."""
-    # Determine which input triggered the callback
+def update_word_details(clicked_word, lookup_clicks, lookup_input, session_value, role_filter, zone_filter, region_filter):
+    """Update word details from click or manual lookup."""
     ctx = dash.callback_context
     if not ctx.triggered:
-        return html.P("Click on a word in the cloud to see details.", className="text-muted")
+        return dash.no_update
 
     trigger_id = ctx.triggered[0]["prop_id"].split(".")[0]
 
     # Get the word to look up
-    word = None
-    if trigger_id == "wordcloud-graph" and click_data:
-        # Extract word from click data - it's in the trace name
-        if click_data.get("points"):
-            point = click_data["points"][0]
-            # The word is stored in customdata
-            if "customdata" in point:
-                word = point["customdata"]
-            elif "text" in point:
-                word = point["text"]
-    elif trigger_id == "word-lookup-btn":
-        word = lookup_word
-
-    if not word:
-        return html.P("Click on a word in the cloud to see details.", className="text-muted")
+    if trigger_id == "clicked-word-store" and clicked_word:
+        word = clicked_word
+    elif trigger_id == "word-lookup-btn" and lookup_input:
+        word = lookup_input
+    else:
+        return html.P("Click a word or type below to see details.", className="text-muted")
 
     # Build filters dict
     filters = {}
@@ -292,26 +375,39 @@ def update_word_details(click_data, lookup_clicks, lookup_word, session_value, r
     if not details or details["total_count"] == 0:
         return html.P(f"Word '{word}' not found in the current selection.", className="text-warning")
 
-    # Build stats display
+    # Build stats display - start with word title
     content = [
-        html.H4(word.title(), className="text-primary"),
+        html.H4(word.title()),  # Uses brand purple from CSS
         html.Hr(),
-        html.P([html.Strong("Total mentions: "), f"{details['total_count']:,}"]),
-        html.P([html.Strong("Unique speakers: "), f"{details['speaker_count']}"]),
     ]
 
-    # Speaker breakdown
-    if details["speakers"]:
-        speaker_items = sorted(
-            details["speakers"].items(),
-            key=lambda x: x[1],
-            reverse=True
-        )[:10]  # Top 10 speakers
+    # Add curated example quotes at the TOP (before stats)
+    # Filter out facilitator, SME, Client roles - focus on participant voices
+    excluded_roles = {"facilitator", "sme", "client", "na"}
+    examples = session_manager.get_word_examples(word, session_value)
+    filtered_examples = [
+        ex for ex in examples
+        if ex.get("role", "").lower() not in excluded_roles
+    ][:3]  # Limit to 3 quotes
 
-        content.append(html.H6("Top Speakers:", className="mt-3"))
-        content.append(html.Ul([
-            html.Li(f"{speaker}: {count}") for speaker, count in speaker_items
-        ]))
+    if filtered_examples:
+        for ex in filtered_examples:
+            role = ex.get("role", "participant")
+            session = ex.get("session", "").title()
+            attribution = f"{role}, {session}" if session else role
+
+            quote_block = html.Blockquote([
+                html.P(f'"{ex.get("quote", "")}"', className="mb-1", style={"fontStyle": "italic"}),
+                html.Footer([
+                    html.Small(attribution, className="text-muted"),
+                ], className="blockquote-footer")
+            ], className="blockquote mb-3", style={"borderLeft": "3px solid #4F3D63", "paddingLeft": "10px"})
+            content.append(quote_block)
+        content.append(html.Hr())
+
+    # Stats section
+    content.append(html.P([html.Strong("Total mentions: "), f"{details['total_count']:,}"]))
+    content.append(html.P([html.Strong("Unique speakers: "), f"{details['speaker_count']}"]))
 
     # Metadata breakdowns (skip description)
     for meta_key, meta_values in details.get("metadata", {}).items():

@@ -38,6 +38,16 @@ CUSTOM_STOP_WORDS = {
     "thing", "things", "something", "lot", "kind", "sort",
     # Meeting-specific
     "question", "questions", "slide", "slides", "next",
+    # Facilitation colors (polling paddles - not substantive content)
+    "green", "yellow", "red", "greens", "yellows", "reds",
+    # Additional filler/conversational words
+    "oh", "us", "anything", "feel", "done", "sure", "start",
+    "point", "couple", "sense", "last", "end", "else", "folks",
+    "session", "four", "half", "looking", "coming", "terms",
+    "another", "anyone", "everyone", "talking", "talk", "day",
+    "across", "trying", "better", "whether", "saying",
+    # Geographic (fragments of "Nova Scotia")
+    "nova", "scotia",
     # Contractions (very common in speech, rarely meaningful)
     "there's", "that's", "it's", "don't", "can't", "won't",
     "wouldn't", "couldn't", "shouldn't", "we're", "they're",

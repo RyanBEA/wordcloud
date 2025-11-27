@@ -2,11 +2,30 @@
 Session loader module for discovering and managing multiple transcript sessions.
 """
 import os
+import json
 from pathlib import Path
 from collections import defaultdict
 
 from config import DATA_DIR
 from data_processor import SessionData, compute_word_stats, get_word_frequencies, filter_word_stats
+
+
+def load_word_examples(session_path: str) -> dict:
+    """
+    Load curated word examples from a session's word_examples.json file.
+
+    Returns dict with word as key and list of example objects as value.
+    """
+    examples_path = Path(session_path) / "word_examples.json"
+    if not examples_path.exists():
+        return {}
+
+    try:
+        with open(examples_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get("examples", {})
+    except (json.JSONDecodeError, IOError):
+        return {}
 
 
 def discover_sessions(data_dir: str = None) -> list:
@@ -167,3 +186,31 @@ class SessionManager:
             "speakers": {},
             "metadata": {}
         })
+
+    def get_word_examples(self, word: str, session_name: str = None) -> list:
+        """
+        Get curated example sentences for a word.
+
+        If session_name is provided, returns examples only from that session.
+        If session_name is "all" or None, returns examples from all sessions.
+        """
+        word_lower = word.lower()
+        all_examples = []
+
+        if session_name and session_name != "all":
+            # Get examples from specific session
+            info = next((s for s in self._session_info if s["name"] == session_name), None)
+            if info:
+                examples = load_word_examples(info["path"])
+                if word_lower in examples:
+                    for ex in examples[word_lower]:
+                        all_examples.append({**ex, "session": session_name})
+        else:
+            # Get examples from all sessions
+            for info in self._session_info:
+                examples = load_word_examples(info["path"])
+                if word_lower in examples:
+                    for ex in examples[word_lower]:
+                        all_examples.append({**ex, "session": info["name"]})
+
+        return all_examples
