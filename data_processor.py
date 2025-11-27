@@ -29,37 +29,26 @@ def load_speakerlist(csv_path: str) -> dict:
     columns = []
 
     with open(csv_path, 'r', encoding='utf-8') as f:
-        # Handle the arrow separator in the CSV
-        content = f.read()
-        # Remove the arrow characters if present
-        content = re.sub(r'\d+→', '', content)
+        reader = csv.DictReader(f, skipinitialspace=True)
 
-        lines = content.strip().split('\n')
-        if not lines:
-            return {}, []
+        # Get column names (excluding Speaker and name which are handled specially)
+        if reader.fieldnames:
+            columns = [col.strip() for col in reader.fieldnames if col.strip().lower() not in ['speaker', 'name']]
 
-        # Parse header
-        header = [col.strip() for col in lines[0].split(',')]
-        columns = header[1:]  # Skip 'Speaker' column
+        for row in reader:
+            # Clean up keys (strip whitespace)
+            row = {k.strip(): v.strip() if v else '' for k, v in row.items()}
 
-        # Parse rows
-        for line in lines[1:]:
-            if not line.strip():
+            speaker_id = row.get('Speaker', '')
+            name = row.get('name', speaker_id)
+
+            if not name or name == 'UNKNOWN':
                 continue
-            parts = [p.strip() for p in line.split(',')]
-            if len(parts) < 2:
-                continue
-
-            speaker_id = parts[0]
-            name = parts[1] if len(parts) > 1 else speaker_id
 
             # Build metadata dict
             metadata = {"speaker_id": speaker_id, "name": name}
-            for i, col in enumerate(columns):
-                if i + 2 < len(parts):
-                    metadata[col.lower()] = parts[i + 2]
-                else:
-                    metadata[col.lower()] = ""
+            for col in columns:
+                metadata[col.lower()] = row.get(col, '')
 
             # Key by name for easy lookup
             speakers[name] = metadata
