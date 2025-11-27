@@ -26,6 +26,7 @@ app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP, GOOGLE_FONTS],
     title="Consultation Word Cloud",
+    update_title=None,  # Disable "Updating..." title flash
     suppress_callback_exceptions=True,
 )
 
@@ -39,40 +40,224 @@ app.index_string = '''
         {%favicon%}
         {%css%}
         <style>
-            /* Base font - Open Sans */
+            /* === BASE STYLES === */
             body {
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 400;
+                background-color: #F5F3F7; /* Soft lavender-gray */
             }
 
-            /* Headings - Open Sans ExtraBold in brand purple */
+            .container-fluid {
+                background-color: #F5F3F7;
+                min-height: 100vh;
+            }
+
+            /* === TYPOGRAPHY === */
             h1, h2, h3, h4, h5, h6,
             .h1, .h2, .h3, .h4, .h5, .h6 {
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 800;
                 color: ''' + BRAND_PURPLE + ''';
+                text-shadow: 0 1px 2px rgba(79, 61, 99, 0.08);
             }
 
-            /* Card headers */
+            h1 {
+                text-shadow: 0 2px 4px rgba(79, 61, 99, 0.1);
+            }
+
+            strong, b {
+                font-weight: 600;
+                color: #2C2433;
+            }
+
+            .text-muted {
+                color: #766985 !important;
+            }
+
+            /* === CARDS === */
+            .card {
+                background-color: #FFFFFF;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(79, 61, 99, 0.08),
+                            0 1px 3px rgba(79, 61, 99, 0.06);
+                transition: box-shadow 0.3s ease;
+            }
+
+            .card:hover {
+                box-shadow: 0 4px 12px rgba(79, 61, 99, 0.12),
+                            0 2px 6px rgba(79, 61, 99, 0.08);
+            }
+
             .card-header {
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 800;
-                color: ''' + BRAND_PURPLE + ''';
+                color: #FFFFFF;
+                background: linear-gradient(135deg, #4F3D63 0%, #5D4A74 100%);
+                border: none;
+                border-radius: 8px 8px 0 0 !important;
+                padding: 12px 16px;
             }
 
-            /* Strong/bold text - semibold */
-            strong, b {
-                font-weight: 600;
+            .card-body {
+                padding: 20px;
+                background-color: #FFFFFF;
+                border-radius: 0 0 8px 8px;
             }
 
-            /* Buttons */
+            /* === BUTTONS === */
             .btn-primary {
-                background-color: ''' + BRAND_PURPLE + ''';
-                border-color: ''' + BRAND_PURPLE + ''';
+                background: linear-gradient(135deg, #4F3D63 0%, #5D4A74 100%);
+                border: none;
+                border-radius: 6px;
+                box-shadow: 0 2px 6px rgba(79, 61, 99, 0.2);
+                transition: all 0.3s ease;
             }
+
             .btn-primary:hover {
-                background-color: #3d2f4d;
-                border-color: #3d2f4d;
+                background: linear-gradient(135deg, #3d2f4d 0%, #4a3859 100%);
+                box-shadow: 0 4px 10px rgba(79, 61, 99, 0.3);
+                transform: translateY(-1px);
+            }
+
+            .btn-primary:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(79, 61, 99, 0.2);
+            }
+
+            .btn-secondary {
+                background-color: #E8E4ED;
+                border: 1px solid #D1C9DB;
+                color: #4F3D63;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+
+            .btn-secondary:hover {
+                background-color: #DDD6E6;
+                border-color: #C4B9D1;
+                color: #3d2f4d;
+            }
+
+            /* === INPUTS === */
+            .input-group {
+                box-shadow: 0 2px 6px rgba(79, 61, 99, 0.08);
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .input-group .form-control {
+                border: 1px solid #E0DBE6;
+                background-color: #FFFFFF;
+            }
+
+            .input-group .form-control:focus {
+                border-color: #4F3D63;
+                box-shadow: 0 0 0 3px rgba(79, 61, 99, 0.1);
+            }
+
+            /* === FILTER COLUMN === */
+            #filter-column {
+                background: linear-gradient(to bottom, #FDFCFE 0%, #F8F6FA 100%);
+                padding: 20px 15px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(79, 61, 99, 0.06);
+                transition: flex 0.3s ease, max-width 0.3s ease, min-width 0.3s ease;
+                overflow: hidden;
+            }
+
+            #filter-column.collapsed {
+                flex: 0 0 50px !important;
+                max-width: 50px !important;
+                min-width: 50px !important;
+                padding: 10px 5px;
+            }
+
+            #filter-column.collapsed .filter-content {
+                display: none;
+            }
+
+            #filter-column.collapsed .filter-header h5 {
+                display: none;
+            }
+
+            /* === TOGGLE BUTTON === */
+            .filter-toggle-btn {
+                background: rgba(79, 61, 99, 0.08);
+                border: none;
+                padding: 8px 12px;
+                cursor: pointer;
+                color: ''' + BRAND_PURPLE + ''';
+                font-size: 1.2rem;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+                box-shadow: 0 1px 3px rgba(79, 61, 99, 0.1);
+            }
+
+            .filter-toggle-btn:hover {
+                background: rgba(79, 61, 99, 0.15);
+                transform: scale(1.05);
+            }
+
+            /* === WORDCLOUD COLUMN === */
+            #wordcloud-column {
+                transition: flex 0.3s ease, max-width 0.3s ease;
+                padding: 0 15px;
+            }
+
+            #wordcloud-column.expanded {
+                flex: 1 1 auto !important;
+                max-width: calc(100% - 50px - 25%) !important;
+            }
+
+            #wordcloud-column .card {
+                box-shadow: 0 4px 16px rgba(79, 61, 99, 0.1),
+                            0 2px 8px rgba(79, 61, 99, 0.06);
+            }
+
+            /* === BLOCKQUOTES === */
+            .blockquote {
+                background: linear-gradient(to right, #F9F8FB 0%, #FDFCFE 100%);
+                border-left: 3px solid #4F3D63 !important;
+                padding: 12px 16px !important;
+                border-radius: 0 6px 6px 0;
+                box-shadow: 0 1px 4px rgba(79, 61, 99, 0.06);
+                margin-bottom: 16px !important;
+            }
+
+            .blockquote p {
+                color: #2C2433;
+            }
+
+            .blockquote-footer {
+                color: #766985 !important;
+            }
+
+            /* === LISTS === */
+            ul {
+                padding-left: 20px;
+            }
+
+            li {
+                padding: 4px 0;
+                color: #3d3447;
+            }
+
+            /* === DIVIDERS === */
+            hr {
+                border-top: 1px solid #E8E4ED;
+                opacity: 1;
+            }
+
+            /* === DROPDOWNS === */
+            .Select-control {
+                border: 1px solid #E0DBE6 !important;
+                border-radius: 6px !important;
+                box-shadow: 0 1px 3px rgba(79, 61, 99, 0.06) !important;
+            }
+
+            .Select-control:hover {
+                border-color: #C4B9D1 !important;
             }
         </style>
     </head>
@@ -158,8 +343,11 @@ app.layout = dbc.Container([
     # Store for clicked word
     dcc.Store(id="clicked-word-store", data=""),
 
-    # Interval to poll for clicked words from iframe
-    dcc.Interval(id="click-poll-interval", interval=200, n_intervals=0),
+    # Store for filter collapse state
+    dcc.Store(id="filters-collapsed-store", data=False),
+
+    # Interval to poll for clicked words from iframe (500ms is responsive enough)
+    dcc.Interval(id="click-poll-interval", interval=500, n_intervals=0),
 
     # Header
     dbc.Row([
@@ -175,18 +363,31 @@ app.layout = dbc.Container([
 
     # Main content
     dbc.Row([
-        # Left sidebar - Filters
+        # Left sidebar - Filters (collapsible horizontally)
         dbc.Col([
-            html.H5("Filters", className="mb-3"),
-            html.Div(id="filter-container", children=create_filter_controls()),
-            dbc.Button(
-                "Reset Filters",
-                id="reset-filters-btn",
-                color="secondary",
-                size="sm",
-                className="w-100 mt-2"
-            ),
-        ], md=3),
+            # Filter header with toggle button
+            html.Div([
+                html.Button(
+                    "◀",
+                    id="filter-toggle-btn",
+                    className="filter-toggle-btn",
+                    title="Toggle filters"
+                ),
+                html.H5("Filters", className="mb-0 ms-2"),
+            ], className="filter-header d-flex align-items-center mb-3"),
+
+            # Filter content (hidden via CSS when collapsed)
+            html.Div([
+                html.Div(id="filter-container", children=create_filter_controls()),
+                dbc.Button(
+                    "Reset Filters",
+                    id="reset-filters-btn",
+                    color="secondary",
+                    size="sm",
+                    className="w-100 mt-2"
+                ),
+            ], className="filter-content"),
+        ], id="filter-column", md=3),
 
         # Center - Word Cloud
         dbc.Col([
@@ -219,7 +420,7 @@ app.layout = dbc.Container([
                 ),
                 dbc.Button("Look Up", id="word-lookup-btn", color="primary"),
             ], className="mt-3"),
-        ], md=6),
+        ], id="wordcloud-column", md=6),
 
         # Right sidebar - Stats
         dbc.Col([
@@ -431,6 +632,39 @@ def update_word_details(clicked_word, lookup_clicks, lookup_input, session_value
 def reset_filters(n_clicks):
     """Reset all filters to empty (show all)."""
     return [], [], []
+
+
+# Clientside callback to toggle filter collapse horizontally
+app.clientside_callback(
+    """
+    function(n_clicks, is_collapsed) {
+        if (n_clicks === undefined) {
+            return window.dash_clientside.no_update;
+        }
+        var new_collapsed = !is_collapsed;
+        var filterCol = document.getElementById('filter-column');
+        var wordcloudCol = document.getElementById('wordcloud-column');
+        var btn = document.getElementById('filter-toggle-btn');
+
+        if (filterCol && wordcloudCol && btn) {
+            if (new_collapsed) {
+                filterCol.classList.add('collapsed');
+                wordcloudCol.classList.add('expanded');
+                btn.innerHTML = '▶';
+            } else {
+                filterCol.classList.remove('collapsed');
+                wordcloudCol.classList.remove('expanded');
+                btn.innerHTML = '◀';
+            }
+        }
+        return new_collapsed;
+    }
+    """,
+    Output("filters-collapsed-store", "data"),
+    Input("filter-toggle-btn", "n_clicks"),
+    State("filters-collapsed-store", "data"),
+    prevent_initial_call=True
+)
 
 
 if __name__ == "__main__":
