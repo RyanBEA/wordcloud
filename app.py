@@ -10,7 +10,7 @@ import dash_bootstrap_components as dbc
 
 from config import DEBUG, HOST, PORT
 from session_loader import SessionManager
-from wordcloud_generator import generate_wordcloud_image, get_wordcloud_dimensions
+from wordcloud_generator import generate_wordcloud_figure, get_wordcloud_dimensions
 
 # Initialize the session manager
 session_manager = SessionManager()
@@ -79,7 +79,7 @@ def create_stats_panel():
         dbc.CardHeader("Word Details"),
         dbc.CardBody([
             html.Div(id="word-stats-content", children=[
-                html.P("Hover over a word in the cloud or click to see details.",
+                html.P("Click on a word in the cloud to see details.",
                        className="text-muted")
             ])
         ])
@@ -94,7 +94,7 @@ app.layout = dbc.Container([
             html.H1("Consultation Session Word Cloud", className="text-center my-4"),
             html.P(
                 "Interactive visualization of word frequencies from consultation transcripts. "
-                "Use filters to explore by role, region, and more.",
+                "Use filters to explore by role, region, and more. Click any word for details.",
                 className="text-center text-muted mb-4"
             )
         ])
@@ -123,12 +123,15 @@ app.layout = dbc.Container([
                         id="loading-wordcloud",
                         type="circle",
                         children=[
-                            html.Img(
-                                id="wordcloud-image",
+                            dcc.Graph(
+                                id="wordcloud-graph",
+                                config={
+                                    'displayModeBar': False,
+                                    'staticPlot': False,
+                                },
                                 style={
                                     "width": "100%",
-                                    "maxWidth": f"{get_wordcloud_dimensions()[0]}px",
-                                    "cursor": "pointer"
+                                    "height": f"{get_wordcloud_dimensions()[1]}px",
                                 }
                             )
                         ]
@@ -159,8 +162,8 @@ app.layout = dbc.Container([
         ], md=3),
     ]),
 
-    # Hidden div to store current filters state
-    dcc.Store(id="current-filters-store"),
+    # Hidden store for selected word from graph click
+    dcc.Store(id="clicked-word-store"),
 
 ], fluid=True)
 
@@ -185,7 +188,7 @@ def get_active_filters(session, *filter_values):
 
 
 @app.callback(
-    Output("wordcloud-image", "src"),
+    Output("wordcloud-graph", "figure"),
     Output("summary-stats", "children"),
     Input("session-dropdown", "value"),
     Input("filter-role", "value"),
@@ -215,8 +218,8 @@ def update_wordcloud(session_value, role_filter, zone_filter, region_filter):
         total_words = sum(frequencies.values()) if frequencies else 0
         unique_words = len(frequencies)
 
-    # Generate word cloud image
-    img_src = generate_wordcloud_image(frequencies)
+    # Generate interactive word cloud figure
+    fig = generate_wordcloud_figure(frequencies)
 
     # Generate summary stats
     summary = [
@@ -230,11 +233,12 @@ def update_wordcloud(session_value, role_filter, zone_filter, region_filter):
         ])
         summary.append(html.P([html.Strong("Active filters: "), active_filters]))
 
-    return img_src, summary
+    return fig, summary
 
 
 @app.callback(
     Output("word-stats-content", "children"),
+    Input("wordcloud-graph", "clickData"),
     Input("word-lookup-btn", "n_clicks"),
     State("word-lookup-input", "value"),
     State("session-dropdown", "value"),
@@ -243,10 +247,31 @@ def update_wordcloud(session_value, role_filter, zone_filter, region_filter):
     State("filter-region", "value"),
     prevent_initial_call=True,
 )
-def lookup_word(n_clicks, word, session_value, role_filter, zone_filter, region_filter):
-    """Look up details for a specific word."""
+def update_word_details(click_data, lookup_clicks, lookup_word, session_value, role_filter, zone_filter, region_filter):
+    """Update word details from either graph click or manual lookup."""
+    # Determine which input triggered the callback
+    ctx = dash.callback_context
+    if not ctx.triggered:
+        return html.P("Click on a word in the cloud to see details.", className="text-muted")
+
+    trigger_id = ctx.triggered[0]["prop_id"].split(".")[0]
+
+    # Get the word to look up
+    word = None
+    if trigger_id == "wordcloud-graph" and click_data:
+        # Extract word from click data - it's in the trace name
+        if click_data.get("points"):
+            point = click_data["points"][0]
+            # The word is stored in customdata
+            if "customdata" in point:
+                word = point["customdata"]
+            elif "text" in point:
+                word = point["text"]
+    elif trigger_id == "word-lookup-btn":
+        word = lookup_word
+
     if not word:
-        return html.P("Please enter a word to look up.", className="text-muted")
+        return html.P("Click on a word in the cloud to see details.", className="text-muted")
 
     # Build filters dict
     filters = {}
@@ -288,9 +313,9 @@ def lookup_word(n_clicks, word, session_value, role_filter, zone_filter, region_
             html.Li(f"{speaker}: {count}") for speaker, count in speaker_items
         ]))
 
-    # Metadata breakdowns
+    # Metadata breakdowns (skip description)
     for meta_key, meta_values in details.get("metadata", {}).items():
-        if meta_values:
+        if meta_values and meta_key != "description":
             content.append(html.H6(f"By {meta_key.title()}:", className="mt-3"))
             sorted_meta = sorted(meta_values.items(), key=lambda x: x[1], reverse=True)
             content.append(html.Ul([

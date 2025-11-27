@@ -24,7 +24,7 @@ WORDCLOUD_CONFIG = {
     "width": 800,
     "height": 400,
     "background_color": "white",
-    "max_words": 100,
+    "max_words": 50,
     "min_font_size": 10,
     "max_font_size": 100,
     "colormap": "viridis",
@@ -38,6 +38,31 @@ CUSTOM_STOP_WORDS = {
     "thing", "things", "something", "lot", "kind", "sort",
     # Meeting-specific
     "question", "questions", "slide", "slides", "next",
+    # Contractions (very common in speech, rarely meaningful)
+    "there's", "that's", "it's", "don't", "can't", "won't",
+    "wouldn't", "couldn't", "shouldn't", "we're", "they're",
+    "you're", "i'm", "he's", "she's", "we've", "they've",
+    "you've", "i've", "let's", "what's", "who's", "how's",
+    "here's", "wasn't", "weren't", "hasn't", "haven't",
+    "didn't", "isn't", "aren't", "doesn't",
+    # Modal verbs (very common in speech, rarely meaningful)
+    "would", "could", "should", "might", "may", "must",
+    # Common verbs that don't carry meaning in this context
+    "get", "go", "went", "come", "came", "say", "said",
+    "see", "saw", "make", "made", "take", "took", "give",
+    "gave", "put", "let", "try", "look", "want", "need",
+    "tell", "told", "ask", "asked", "use", "used",
+    # Common speech fillers and transitions
+    "well", "right", "mean", "bit", "way", "even", "still",
+    "also", "probably", "maybe", "anyway", "basically",
+    "certainly", "definitely", "obviously", "actually",
+    "essentially", "guess", "suppose",
+    # Time/sequence words
+    "now", "then", "today", "time", "already", "yet",
+    # Quantifiers and pronouns often not meaningful alone
+    "one", "two", "three", "first", "much", "many",
+    "little", "big", "good", "great", "back", "around",
+    "different", "able", "new", "part", "people",
 }
 
 # Columns from speakerlist.csv to use as filter options
