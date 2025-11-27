@@ -403,8 +403,8 @@ app.layout = dbc.Container([
                                 style={
                                     "width": "100%",
                                     "aspectRatio": f"{wc_width}/{wc_height}",
-                                    "maxWidth": f"{wc_width}px",
-                                    "margin": "0 auto",
+                                    
+                                    
                                 }
                             )
                         ]
