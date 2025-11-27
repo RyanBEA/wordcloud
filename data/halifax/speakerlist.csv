@@ -1,14 +1,14 @@
 Speaker, name, role, description, zone, region
 SPEAKER_00, UNKNOWN, , , , 
-SPEAKER_01, Allison M, facilitator, Allison is the meeting facilitator, NA, NA
-SPEAKER_02, Patrick H, policy and programs, Patrick is not a subject matter expert but has some experience with community engagement and energy policy at the Clean Foundation, All, Halifax
-SPEAKER_03, Jordan M, energy advisor, Jordan runs a service organization that employs energy advisors accross atlantic canada, All, Halifax
-SPEAKER_04, Matthew B, building official, Matthew is a building official in zone 1 and has significant experience as an energy advisor, 1, Truro
-SPEAKER_05, Linda M, policy and programs, Linda is an independent consultant with experience in energy programs and partnerships, All, Halifax
-SPEAKER_06, Mark R, SME, Mark is one of two Subject matter experts on this project, NA, NA
+SPEAKER_01, Allison M, Facilitator, Allison is the meeting facilitator, NA, NA
+SPEAKER_02, Patrick H, Policy and Programs staff, Patrick is not a subject matter expert but has some experience with community engagement and energy policy at the Clean Foundation, All, Halifax
+SPEAKER_03, Jordan M, Energy Advisor, Jordan runs a service organization that employs energy advisors accross atlantic canada, All, Halifax
+SPEAKER_04, Matthew B, Building Official, Matthew is a building official in zone 1 and has significant experience as an energy advisor, 1, Truro
+SPEAKER_05, Linda M, Policy and Programs staff, Linda is an independent consultant with experience in energy programs and partnerships, All, Halifax
+SPEAKER_06, Mark R, Baseline, Mark is one of two Subject matter experts on this project, NA, NA
 SPEAKER_07, UNKNOWN, , , , 
-SPEAKER_08, Greg H, building official, Greg is a building official for Halifax and holds positions in the nova scotia building officials association, All, Halifax
-SPEAKER_09, Gary M, energy advisor, Gary is an energy advisor at the Clean Foundation, All, Halifax
+SPEAKER_08, Greg H, Building Official, Greg is a building official for Halifax and holds positions in the nova scotia building officials association, All, Halifax
+SPEAKER_09, Gary M, Energy Advisor, Gary is an energy advisor at the Clean Foundation, All, Halifax
 SPEAKER_10, Joe C, Client, Joe is the project manager at the Building to Zero exchange (referred to as BTZ or BTZx_. This work is being paid for by his organization, NA, NA
-SPEAKER_11, Ryan K, SME, Ryan is one of two subject matter experts on this project, NA, NA
-SPEAKER_12, Scott O, policy and programs, Scott is not a subject matter expert but has some experience with community engagement and energy policy at the Clean Foundation, All, Halifax
+SPEAKER_11, Ryan K, Baseline, Ryan is one of two subject matter experts on this project, NA, NA
+SPEAKER_12, Scott O, Policy and Programs staff, Scott is not a subject matter expert but has some experience with community engagement and energy policy at the Clean Foundation, All, Halifax
